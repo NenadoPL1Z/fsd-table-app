@@ -13,7 +13,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "husky": "husky install"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -32,6 +33,8 @@
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-react-refresh": "0.4.5",
+    "husky": "8.0.3",
+    "lint-staged": "15.2.0",
     "postcss": "8.4.33",
     "prettier": "3.2.1",
     "sass": "1.69.7",
@@ -39,5 +42,14 @@
     "vite": "5.0.8",
     "vite-plugin-svgr": "4.2.0",
     "vite-tsconfig-paths": "4.2.3"
+  },
+  "lint-staged": {
+    "./src/**/*.{ts,tsx}": [
+      "prettier --write src/",
+      "eslint . --fix",
+      "eslint . --ext .ts,.tsx",
+      "eslint --max-warnings=0",
+      "bash -c tsc"
+    ]
   }
 }

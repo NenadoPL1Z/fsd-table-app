@@ -12,7 +12,7 @@ module.exports = {
     "plugin:prettier/recommended",
     "prettier",
   ],
-  ignorePatterns: ["dist", ".eslintrc.js", "node_modules"],
+  ignorePatterns: ["dist", ".eslintrc.js", "postcss.config.js"],
   parser: "@typescript-eslint/parser",
   plugins: ["react-refresh"],
   rules: {

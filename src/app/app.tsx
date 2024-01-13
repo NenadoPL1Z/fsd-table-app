@@ -1,7 +1,9 @@
+import { Button } from "@/shared/ui";
+
 const App = () => {
   return (
     <>
-      <h1>Hi!</h1>
+      <Button>Кнопка</Button>
     </>
   );
 };

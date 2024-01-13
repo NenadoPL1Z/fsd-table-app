@@ -1,0 +1,21 @@
+.root {
+  min-width: 60px;
+  padding: 5px 15px;
+
+  font-size: 16px;
+
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  color: var(--secondary-color);
+
+  cursor: pointer;
+  transition: .2s all linear;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--primary-color);
+      color: var(--white-color);
+    }
+  }
+}

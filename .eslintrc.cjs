@@ -14,11 +14,6 @@ module.exports = {
   ],
   ignorePatterns: ["dist", ".eslintrc.js", "node_modules"],
   parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: "tsconfig.json"
-  },
   plugins: ["react-refresh"],
   rules: {
     "prettier/prettier": "error",

@@ -14,7 +14,8 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "husky": "husky install"
+    "husky": "husky install",
+    "pre-commit-fix": "chmod ug+x .husky/*"
   },
   "dependencies": {
     "react": "^18.2.0",

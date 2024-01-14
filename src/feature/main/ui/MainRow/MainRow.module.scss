@@ -1,0 +1,11 @@
+.container {
+}
+
+.wrapper {
+  flex-grow: 1;
+  display: flex;
+}
+
+.aside {
+  width: var(--table-aside);
+}

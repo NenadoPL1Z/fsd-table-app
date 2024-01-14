@@ -1,6 +1,10 @@
 .root {
   display: flex;
-  align-items: center;
   position: sticky;
   top: 0;
+}
+
+.aside {
+  width: var(--table-aside);
+  background-color: var(--white-color);
 }

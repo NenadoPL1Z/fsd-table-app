@@ -1,5 +1,5 @@
 import { TableLine } from "@/shared/model";
-import { HeaderItemType } from "@/feature/table/ui";
+import { HeaderItemType } from "@/feature/header";
 
 type TabKey = keyof Omit<TableLine, "children">;
 

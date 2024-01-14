@@ -9,7 +9,7 @@ export function MainPage() {
   return (
     <StatusWrapper isLoading={isLoading} error={{ isError, onRetry: loadData }}>
       <Header />
-      {tableInfo && <Main info={tableInfo} />}
+      {tableInfo && <Main rows={tableInfo} />}
     </StatusWrapper>
   );
 }

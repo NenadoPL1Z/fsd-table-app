@@ -1,6 +1,6 @@
-import { SortVariant } from "../../types";
+import { SelectOptions } from "@/shared/types";
 
 export type HeaderItemType = {
   name: string;
-  type: SortVariant;
+  sort: SelectOptions;
 };

@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Nullable } from "@/shared/types";
 import { TableArr } from "@/shared/model";
 import { useStatus } from "@/shared/hooks";
-import { getTableInfo } from "@/pages/main/api/getTableInfo";
+import { structuredTable } from "@/widget/main/functions";
+import { getTableInfo } from "@/pages/main/api";
 
 export const useMainPage = () => {
   const [tableInfo, setTableInfo] = useState<Nullable<TableArr>>(null);
@@ -15,19 +16,21 @@ export const useMainPage = () => {
     handleClearStatus,
   } = useStatus();
 
+  const successResult = (data: TableArr) => {
+    const structured = structuredTable(data);
+    setTableInfo(structured);
+    handleClearStatus();
+  };
+
+  const catchResult = () => {
+    setTimeout(() => {
+      handleErrorStatus("Ошибка загрузки информации");
+    }, 1000);
+  };
+
   const loadData = () => {
     handleLoadingStatus();
-
-    getTableInfo()
-      .then((data) => {
-        setTableInfo(data);
-        handleClearStatus();
-      })
-      .catch(() => {
-        setTimeout(() => {
-          handleErrorStatus("Ошибка загрузки информации");
-        }, 1000);
-      });
+    getTableInfo().then(successResult).catch(catchResult);
   };
 
   useEffect(() => {

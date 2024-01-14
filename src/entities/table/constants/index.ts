@@ -1,7 +1,7 @@
 import { TableLine } from "@/shared/model";
 import { HeaderItemType } from "@/feature/table/ui";
 
-type TabKey = keyof TableLine;
+type TabKey = keyof Omit<TableLine, "children">;
 
 type Data = Record<TabKey, HeaderItemType>;
 

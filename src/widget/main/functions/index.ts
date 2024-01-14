@@ -1,0 +1,1 @@
+export { structuredTable } from "./structuredTable";

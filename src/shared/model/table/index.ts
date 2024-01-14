@@ -5,6 +5,7 @@ export interface TableLine {
   balance: string;
   name: string;
   email: string;
+  children?: TableLine[];
 }
 
 export type TableArr = TableLine[];

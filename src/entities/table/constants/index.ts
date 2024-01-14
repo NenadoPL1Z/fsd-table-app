@@ -7,12 +7,42 @@ type TabKey = keyof Omit<TableLine, "children">;
 type Data = Record<TabKey, HeaderItemType>;
 
 const tableStructure: Data = {
-  id: { name: "id", sort: NumberSort },
-  parentId: { name: "parent", sort: NumberSort },
-  name: { name: "имя", sort: StringSort },
-  email: { name: "email", sort: StringSort },
-  balance: { name: "баланс", sort: NumberSort },
-  isActive: { name: "активный", sort: BooleanSort },
+  id: {
+    name: "id",
+    tabName: "id",
+    sortType: "number",
+    sort: NumberSort,
+  },
+  parentId: {
+    name: "parent",
+    tabName: "parentId",
+    sortType: "number",
+    sort: NumberSort,
+  },
+  name: {
+    name: "имя",
+    tabName: "name",
+    sortType: "string",
+    sort: StringSort,
+  },
+  email: {
+    name: "email",
+    tabName: "email",
+    sortType: "string",
+    sort: StringSort,
+  },
+  balance: {
+    name: "баланс",
+    tabName: "balance",
+    sortType: "string",
+    sort: NumberSort,
+  },
+  isActive: {
+    name: "активный",
+    tabName: "isActive",
+    sortType: "boolean",
+    sort: BooleanSort,
+  },
 };
 const getTableHeader = () => {
   const result: HeaderItemType[] = [];

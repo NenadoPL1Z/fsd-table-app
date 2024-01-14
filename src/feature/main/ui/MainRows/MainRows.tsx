@@ -4,13 +4,14 @@ import { MainRow } from "@/feature/main";
 
 interface MainRows {
   rows: TableArr;
+  nested: number;
 }
 
-const Component = ({ rows }: MainRows) => {
+const Component = ({ rows, nested }: MainRows) => {
   return (
     <>
       {rows.map((row) => (
-        <MainRow key={row.id} {...row} />
+        <MainRow key={row.id} nested={nested} {...row} />
       ))}
     </>
   );

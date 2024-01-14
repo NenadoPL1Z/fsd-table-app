@@ -6,7 +6,7 @@ import styles from "./Main.module.scss";
 const Component = ({ rows }: MainProps) => {
   return (
     <main className={styles.root}>
-      <MainRows rows={rows} />
+      <MainRows nested={0} rows={rows} />
     </main>
   );
 };

@@ -19,7 +19,9 @@ const Component = (props: MainRowProps) => {
         </div>
         <MainLine {...props} />
       </div>
-      {isDisplayChildren && <MainRows rows={children as TableArr} />}
+      {isDisplayChildren && (
+        <MainRows nested={props.nested + 1} rows={children as TableArr} />
+      )}
     </div>
   );
 };

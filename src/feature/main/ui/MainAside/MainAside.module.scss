@@ -1,0 +1,17 @@
+.button {
+  width: 20px;
+
+  background-color: var(--primary-color);
+  color: var(--white-color);
+
+  border: 0;
+  cursor: pointer;
+
+  transition: .2s all linear;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--secondary-color);
+    }
+  }
+}

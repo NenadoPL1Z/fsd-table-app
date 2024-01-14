@@ -1,4 +1,5 @@
 import { memo, useMemo } from "react";
+import styles from "./MainAside.module.scss";
 
 interface MainAsideProps {
   isOpen: boolean;
@@ -10,7 +11,9 @@ const Component = ({ isOpen, handleToggle }: MainAsideProps) => {
 
   return (
     <div>
-      <button onClick={handleToggle}>{buttonText}</button>
+      <button className={styles.button} onClick={handleToggle}>
+        {buttonText}
+      </button>
     </div>
   );
 };

@@ -1,8 +1,9 @@
+import { memo } from "react";
 import styles from "./Main.module.scss";
 import { MainProps } from "./types";
 import { MainLine } from "@/feature/table/ui";
 
-export const Main = ({ info }: MainProps) => {
+const Component = ({ info }: MainProps) => {
   return (
     <main className={styles.root}>
       {info.map((item) => (
@@ -11,3 +12,5 @@ export const Main = ({ info }: MainProps) => {
     </main>
   );
 };
+
+export const Main = memo(Component);

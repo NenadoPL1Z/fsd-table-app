@@ -1,15 +1,18 @@
+import { memo } from "react";
 import { TableLine } from "@/shared/model";
 import styles from "./MainLine.module.scss";
 import { tableMain } from "@/entities/table";
 
-export const MainLine = (props: TableLine) => {
+const Component = (props: TableLine) => {
   return (
     <div className={styles.root}>
       {tableMain.map((key) => (
         <div key={key} className={styles.item}>
-          {props[key] + ""}
+          {`${props[key]}`}
         </div>
       ))}
     </div>
   );
 };
+
+export const MainLine = memo(Component);

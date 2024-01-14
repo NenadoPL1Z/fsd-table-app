@@ -1,10 +1,7 @@
+import { memo } from "react";
 import { StatusWrapperProps } from "./types";
 import { ErrorWrapper, LoadingWrapper } from "@/shared/containers";
-export const StatusWrapper = ({
-  children,
-  isLoading,
-  error,
-}: StatusWrapperProps) => {
+const Component = ({ children, isLoading, error }: StatusWrapperProps) => {
   const isDisplayLoading = isLoading;
   const isDisplayError = !isDisplayLoading && error.isError;
   const isDisplayContent = !isDisplayLoading && !isDisplayError;
@@ -17,3 +14,5 @@ export const StatusWrapper = ({
     </>
   );
 };
+
+export const StatusWrapper = memo(Component);

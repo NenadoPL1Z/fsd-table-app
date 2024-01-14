@@ -1,16 +1,9 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
+import { memo } from "react";
+import { ButtonProps } from "./types";
 import styles from "./Button.module.scss";
 import classNames from "classnames";
-import { DeleteClassName, ExpandClassNames } from "@/shared/types";
 
-type ButtonHtml = DetailedHTMLProps<
-  ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
->;
-
-type ButtonProps = ExpandClassNames<DeleteClassName<ButtonHtml>>;
-
-export const Button = (props: ButtonProps) => {
+const Component = (props: ButtonProps) => {
   const { clsNames = [] } = props;
   const className = classNames(styles.root, ...clsNames);
 
@@ -20,3 +13,5 @@ export const Button = (props: ButtonProps) => {
     </button>
   );
 };
+
+export const Button = memo(Component);

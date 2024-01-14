@@ -1,5 +1,8 @@
+import { memo } from "react";
 import { ClipLoader } from "react-spinners";
 
-export const Spinner = () => {
+const Component = () => {
   return <ClipLoader color="#89aae3" size={40} />;
 };
+
+export const Spinner = memo(Component);

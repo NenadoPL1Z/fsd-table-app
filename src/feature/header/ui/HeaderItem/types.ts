@@ -1,6 +1,6 @@
-import { TableLine } from "@/shared/model";
+import { SortVariant } from "../../types";
 
 export type HeaderItemType = {
   name: string;
-  type: TableLine[keyof TableLine];
+  type: SortVariant;
 };

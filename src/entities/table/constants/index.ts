@@ -8,7 +8,7 @@ type Data = Record<TabKey, HeaderItemType>;
 const tableStructure: Data = {
   id: { name: "id", type: "number" },
   parentId: { name: "parent", type: "number" },
-  name: { name: "имя", type: "number" },
+  name: { name: "имя", type: "string" },
   email: { name: "почта", type: "string" },
   balance: { name: "баланс", type: "number" },
   isActive: { name: "активный", type: "boolean" },

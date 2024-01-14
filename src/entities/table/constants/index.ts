@@ -9,9 +9,9 @@ const tableStructure: Data = {
   id: { name: "id", type: "number" },
   parentId: { name: "parent", type: "number" },
   name: { name: "имя", type: "number" },
-  email: { name: "почта", type: "qwe" },
+  email: { name: "почта", type: "string" },
   balance: { name: "баланс", type: "number" },
-  isActive: { name: "активный", type: "name" },
+  isActive: { name: "активный", type: "boolean" },
 };
 const getTableHeader = () => {
   const result: HeaderItemType[] = [];

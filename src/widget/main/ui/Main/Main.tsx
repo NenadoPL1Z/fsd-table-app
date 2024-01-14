@@ -1,8 +1,13 @@
-import { TableArr } from "@/shared/model";
+import styles from "./Main.module.scss";
+import { MainProps } from "./types";
+import { MainLine } from "@/feature/table/ui";
 
-interface MainProps {
-  info: TableArr;
-}
 export const Main = ({ info }: MainProps) => {
-  return <main>{JSON.stringify(info)}</main>;
+  return (
+    <main className={styles.root}>
+      {info.map((item) => (
+        <MainLine key={item.id} {...item} />
+      ))}
+    </main>
+  );
 };

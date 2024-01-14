@@ -1,1 +1,1 @@
-export type { TableArr, TableItem } from "./table";
+export type { TableArr, TableLine } from "./table";

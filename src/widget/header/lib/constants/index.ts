@@ -1,15 +1,15 @@
-import { TableItem } from "@/shared/model";
+import { TableLine } from "@/shared/model";
 import { HeaderItemType } from "@/feature/table/ui";
 
-type Data = Record<keyof TableItem, HeaderItemType>;
+type Data = Record<keyof TableLine, HeaderItemType>;
 
 const data: Data = {
   id: { name: "id", type: "number" },
   parentId: { name: "parent", type: "number" },
-  isActive: { name: "активированный", type: "name" },
-  balance: { name: "баланс", type: "number" },
   name: { name: "имя", type: "number" },
   email: { name: "почта", type: "qwe" },
+  balance: { name: "баланс", type: "number" },
+  isActive: { name: "активный", type: "name" },
 };
 const getHeaderDataArr = () => {
   const result: HeaderItemType[] = [];

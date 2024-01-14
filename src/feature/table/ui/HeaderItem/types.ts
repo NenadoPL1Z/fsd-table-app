@@ -1,6 +1,6 @@
-import { TableItem } from "@/shared/model";
+import { TableLine } from "@/shared/model";
 
 export type HeaderItemType = {
   name: string;
-  type: TableItem[keyof TableItem];
+  type: TableLine[keyof TableLine];
 };

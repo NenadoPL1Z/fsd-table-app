@@ -1,4 +1,4 @@
-export interface TableItem {
+export interface TableLine {
   id: number;
   parentId: number;
   isActive: boolean;
@@ -7,4 +7,4 @@ export interface TableItem {
   email: string;
 }
 
-export type TableArr = TableItem[];
+export type TableArr = TableLine[];

@@ -1,0 +1,16 @@
+.root {
+  display: flex;
+}
+
+.item {
+  min-width: 16%;
+  padding: 5px;
+
+  flex: 1;
+  flex-shrink: 0;
+
+  background-color: var(--white-color);
+  border: 0.5px solid var(--secondary-color);
+
+  word-wrap: break-word;
+}

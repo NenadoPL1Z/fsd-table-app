@@ -18,6 +18,8 @@ module.exports = {
   rules: {
     "prettier/prettier": "error",
     "no-unused-vars": "off",
+    "no-console": "warn",
+    "react-hooks/exhaustive-deps": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
     "react/react-in-jsx-scope": "off",

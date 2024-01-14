@@ -1,11 +1,7 @@
-import { Button } from "@/shared/ui";
+import { MainPage } from "@/pages/main";
 
 const App = () => {
-  return (
-    <>
-      <Button>Кнопка</Button>
-    </>
-  );
+  return <MainPage />;
 };
 
 export default App;

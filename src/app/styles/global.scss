@@ -7,3 +7,9 @@ body {
   line-height: var(--font-line);
   font-weight: var(--font-weight);
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}

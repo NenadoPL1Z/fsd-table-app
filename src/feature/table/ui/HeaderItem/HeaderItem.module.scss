@@ -1,0 +1,15 @@
+.root {
+  height: 100%;
+
+  min-width: 80px;
+  min-height: 50px;
+
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--white-color);
+  border: 1px solid var(--secondary-color);
+  background-color: var(--primary-color);
+}

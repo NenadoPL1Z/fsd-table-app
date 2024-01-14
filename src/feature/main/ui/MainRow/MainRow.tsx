@@ -6,13 +6,19 @@ import { MainRowProps } from "./types";
 import { TableArr } from "@/shared/model";
 
 const Component = (props: MainRowProps) => {
-  const { children, isOpen, isDisplayChildren, handleToggle } =
-    useMainRow(props);
+  const {
+    children,
+    isOpen,
+    isDisplayChildren,
+    dynamicButton,
+    dynamicLine,
+    handleToggle,
+  } = useMainRow(props);
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.aside}>
+        <div style={dynamicButton} className={styles.aside}>
           {children && (
             <MainAside isOpen={isOpen} handleToggle={handleToggle} />
           )}
@@ -22,6 +28,7 @@ const Component = (props: MainRowProps) => {
       {isDisplayChildren && (
         <MainRows nested={props.nested + 1} rows={children as TableArr} />
       )}
+      {isOpen && <div style={dynamicLine} className={styles.line} />}
     </div>
   );
 };

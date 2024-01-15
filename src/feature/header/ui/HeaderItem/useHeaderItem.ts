@@ -19,7 +19,7 @@ export const useHeaderItem = ({ tabName, sortType }: HeaderItemType) => {
   };
 
   const onChangeSelect: ChangeEventHandler<HTMLSelectElement> = (event) => {
-    setSelectValue(event.target.value);
+    setSelectValue(event.target.value as SelectionOptionValue);
   };
   //? SET SORT
   useEffect(() => {

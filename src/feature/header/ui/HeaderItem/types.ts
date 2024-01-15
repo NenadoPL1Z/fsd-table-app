@@ -1,9 +1,9 @@
 import { SelectOptions, SortType } from "@/shared/types";
-import { TableLine } from "@/shared/model";
+import { TableLineKeyofUnion } from "@/shared/model";
 
 export type HeaderItemType = {
   name: string;
-  tabName: keyof TableLine;
+  tabName: TableLineKeyofUnion;
   sortType: SortType;
   sort: SelectOptions;
 };

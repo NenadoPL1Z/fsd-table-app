@@ -8,7 +8,7 @@ export type ChildrenProps<T> = T & {
 
 export type SortType = "string" | "number" | "boolean";
 
-export type SelectionOptionValue = string;
+export type SelectionOptionValue = "asc" | "desc" | "true" | "false" | "";
 
 export type SelectOption = {
   label: string;

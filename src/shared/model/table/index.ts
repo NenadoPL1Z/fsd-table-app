@@ -8,4 +8,6 @@ export interface TableLine {
   children?: TableLine[];
 }
 
+export type TableLineKeyofUnion = keyof TableLine;
+
 export type TableArr = TableLine[];

@@ -1,1 +1,1 @@
-export type { TableArr, TableLine } from "./table";
+export type { TableArr, TableLine, TableLineKeyofUnion } from "./table";

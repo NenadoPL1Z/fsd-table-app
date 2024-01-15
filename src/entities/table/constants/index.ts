@@ -34,7 +34,7 @@ const tableStructure: Data = {
   balance: {
     id: "balance",
     name: "баланс",
-    type: "string",
+    type: "number",
     sort: NumberSort,
   },
   isActive: {

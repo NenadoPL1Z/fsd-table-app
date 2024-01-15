@@ -3,16 +3,16 @@ import { devtools } from "zustand/middleware";
 import { Nullable, SelectionOptionValue, SortType } from "@/shared/types";
 import { TableLineKeyofUnion } from "@/shared/model";
 
-export type StoreSort = {
-  tabName: TableLineKeyofUnion;
+export type Sort = {
+  id: TableLineKeyofUnion;
+  type: SortType;
+  value: SelectionOptionValue;
   filter: string;
-  sortType: SortType;
-  sort: SelectionOptionValue;
 };
 
 export interface SortState {
-  sort: Nullable<StoreSort>;
-  setSort: (sort: StoreSort) => void;
+  sort: Nullable<Sort>;
+  setSort: (sort: Sort) => void;
   clearSort: () => void;
 }
 export const sortStore = create<SortState>()(

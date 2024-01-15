@@ -4,48 +4,50 @@ import { SelectionOptionValue } from "@/shared/types";
 import { sortStore } from "@/entities/sort";
 
 export const useHeaderItem = ({ tabName, sortType }: HeaderItemType) => {
-  const { sort, setSort, clearSort } = sortStore();
+  const { sort, setSort } = sortStore();
+  const isActive = sort?.id === tabName;
 
   //? STATES
   const [selectValue, setSelectValue] = useState<SelectionOptionValue>("");
   const [inputValue, setInputValue] = useState<string>("");
 
-  const handleSetSort = () => {
-    setSort({ tabName, sortType, sort: selectValue, filter: inputValue });
+  //? HANDLERS
+  const handleReset = () => {
+    if (inputValue) setInputValue("");
+    if (selectValue) setSelectValue("");
+  };
+
+  const handleSetSort = ({ value = selectValue, filter = inputValue }) => {
+    setSort({
+      id: tabName,
+      type: sortType,
+      value,
+      filter,
+    });
   };
 
   const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
+    const filter = e.target.value;
+    setInputValue(filter);
+    handleSetSort({ filter });
   };
 
   const onChangeSelect: ChangeEventHandler<HTMLSelectElement> = (event) => {
-    setSelectValue(event.target.value as SelectionOptionValue);
+    const value = event.target.value as SelectionOptionValue;
+    setSelectValue(value);
+    handleSetSort({ value });
   };
-  //? SET SORT
-  useEffect(() => {
-    const isValue = selectValue || inputValue;
-    if (isValue) {
-      handleSetSort();
-    }
-    if (!isValue) {
-      clearSort();
-    }
-  }, [selectValue, inputValue]);
 
-  //? CLEAR LOCAL STATE
+  //? clear prev sort
   useEffect(() => {
-    const isClear = sort?.tabName !== tabName && (selectValue || inputValue);
-
-    if (isClear) {
-      setSelectValue("");
-      setInputValue("");
+    if (!isActive) {
+      handleReset();
     }
-  }, [sort]);
+  }, [isActive]);
 
   return {
     inputValue,
     selectValue,
-
     onChangeInput,
     onChangeSelect,
   };

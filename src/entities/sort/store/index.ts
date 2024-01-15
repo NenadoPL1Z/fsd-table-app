@@ -13,10 +13,12 @@ type Sort = {
 interface SortState {
   sort: Nullable<Sort>;
   setSort: (sort: Sort) => void;
+  clearSort: () => void;
 }
 export const sortStore = create<SortState>()(
   devtools((set) => ({
     sort: null,
     setSort: (sort) => set(() => ({ sort })),
+    clearSort: () => set(() => ({ sort: null })),
   })),
 );

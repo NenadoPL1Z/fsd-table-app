@@ -4,7 +4,7 @@ import { SelectionOptionValue } from "@/shared/types";
 import { sortStore } from "@/entities/sort";
 
 export const useHeaderItem = ({ tabName, sortType }: HeaderItemType) => {
-  const { sort, setSort } = sortStore();
+  const { sort, setSort, clearSort } = sortStore();
 
   //? STATES
   const [selectValue, setSelectValue] = useState<SelectionOptionValue>("");
@@ -23,8 +23,12 @@ export const useHeaderItem = ({ tabName, sortType }: HeaderItemType) => {
   };
   //? SET SORT
   useEffect(() => {
-    if (selectValue || inputValue) {
+    const isValue = selectValue || inputValue;
+    if (isValue) {
       handleSetSort();
+    }
+    if (!isValue) {
+      clearSort();
     }
   }, [selectValue, inputValue]);
 

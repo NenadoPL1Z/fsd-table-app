@@ -6,8 +6,10 @@ import { structuredTable } from "@/widget/main/functions";
 import { getTableInfo } from "@/pages/main/api";
 
 export const useMainPage = () => {
+  //? STATES
   const [tableInfo, setTableInfo] = useState<Nullable<TableArr>>(null);
 
+  //? CUSTOM HOOKS
   const {
     isLoading,
     isError,
@@ -16,6 +18,7 @@ export const useMainPage = () => {
     handleClearStatus,
   } = useStatus();
 
+  //? FETCH
   const successResult = (data: TableArr) => {
     const structured = structuredTable(data);
     setTableInfo(structured);
@@ -33,6 +36,7 @@ export const useMainPage = () => {
     getTableInfo().then(successResult).catch(catchResult);
   };
 
+  //? EFFECTS
   useEffect(() => {
     loadData();
   }, []);

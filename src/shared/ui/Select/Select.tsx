@@ -6,7 +6,7 @@ export const Component = ({ options, ...props }: SelectProps) => {
   return (
     <select className={styles.select} {...props}>
       {options.map((option) => (
-        <option key={option.label} value={JSON.stringify(option.value)}>
+        <option key={option.label} value={option.value}>
           {option.label}
         </option>
       ))}

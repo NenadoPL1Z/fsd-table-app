@@ -1,1 +1,1 @@
-export { booleanToYesOrNo } from "./booleanToYesOrNo";
+export { getOnlyNumber } from "./getOnlyNumber";

@@ -49,8 +49,11 @@ export const useHeaderItem = ({ id, type }: HeaderItemType) => {
   }, [isActive]);
 
   return {
+    isActive,
+
     inputValue,
     selectValue,
+
     onChangeInput,
     onChangeSelect,
   };

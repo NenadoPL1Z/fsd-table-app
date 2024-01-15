@@ -7,11 +7,18 @@ import { useHeaderItem } from "@/feature/header/ui/HeaderItem/useHeaderItem";
 const Component = (props: HeaderItemType) => {
   const { name, sort } = props;
 
-  const { selectValue, inputValue, onChangeSelect, onChangeInput } =
-    useHeaderItem(props);
+  const {
+    isActive,
+
+    inputValue,
+    selectValue,
+
+    onChangeInput,
+    onChangeSelect,
+  } = useHeaderItem(props);
 
   return (
-    <div className={styles.root}>
+    <div className={`${styles.root} ${isActive && styles.active}`}>
       <div>{name}</div>
       <div className={styles.select}>
         <Select value={selectValue} options={sort} onChange={onChangeSelect} />

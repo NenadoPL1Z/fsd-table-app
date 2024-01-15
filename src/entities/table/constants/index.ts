@@ -8,39 +8,39 @@ type Data = Record<TabKey, HeaderItemType>;
 
 const tableStructure: Data = {
   id: {
+    id: "id",
     name: "id",
-    tabName: "id",
-    sortType: "number",
+    type: "number",
     sort: NumberSort,
   },
   parentId: {
+    id: "parentId",
     name: "parent",
-    tabName: "parentId",
-    sortType: "number",
+    type: "number",
     sort: NumberSort,
   },
   name: {
+    id: "name",
     name: "имя",
-    tabName: "name",
-    sortType: "string",
+    type: "string",
     sort: StringSort,
   },
   email: {
+    id: "email",
     name: "email",
-    tabName: "email",
-    sortType: "string",
+    type: "string",
     sort: StringSort,
   },
   balance: {
+    id: "balance",
     name: "баланс",
-    tabName: "balance",
-    sortType: "string",
+    type: "string",
     sort: NumberSort,
   },
   isActive: {
+    id: "isActive",
     name: "активный",
-    tabName: "isActive",
-    sortType: "boolean",
+    type: "boolean",
     sort: BooleanSort,
   },
 };

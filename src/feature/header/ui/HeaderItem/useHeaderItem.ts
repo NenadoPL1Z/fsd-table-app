@@ -3,9 +3,9 @@ import { ChangeEvent, ChangeEventHandler, useEffect, useState } from "react";
 import { SelectionOptionValue } from "@/shared/types";
 import { sortStore } from "@/entities/sort";
 
-export const useHeaderItem = ({ tabName, sortType }: HeaderItemType) => {
+export const useHeaderItem = ({ id, type }: HeaderItemType) => {
   const { sort, setSort } = sortStore();
-  const isActive = sort?.id === tabName;
+  const isActive = sort?.id === id;
 
   //? STATES
   const [selectValue, setSelectValue] = useState<SelectionOptionValue>("");
@@ -19,8 +19,8 @@ export const useHeaderItem = ({ tabName, sortType }: HeaderItemType) => {
 
   const handleSetSort = ({ value = selectValue, filter = inputValue }) => {
     setSort({
-      id: tabName,
-      type: sortType,
+      id,
+      type,
       value,
       filter,
     });

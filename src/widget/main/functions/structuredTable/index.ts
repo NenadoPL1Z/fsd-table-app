@@ -1,43 +1,43 @@
-import { TableArr } from "@/shared/model";
-import { Nullable } from "@/shared/types";
+import { TableArr, TableLine } from "@/shared/model";
 
-export const structuredTable = (data: TableArr) => {
-  const tableSortParent = data.sort((a, b) => b.parentId - a.parentId);
+const setChildren = (data: TableArr, item: TableLine) => {
+  if (data.length) {
+    item.children = data;
+  }
+};
+const generateRecursive = (data: TableArr, id: number) => {
+  const result = [];
 
-  const parentArrArr: TableArr[] = [];
-  const parentArrId: { parent: number; children: TableArr }[] = [];
+  for (let i = 0; i < data.length; i++) {
+    const item = data[i];
 
-  let lastParent: Nullable<number> = null;
-
-  for (let i = 0; i < tableSortParent.length; i++) {
-    const currentItem = tableSortParent[i];
-    const parent = currentItem.parentId;
-
-    if (parent !== lastParent) {
-      parentArrArr.push([currentItem]);
-      parentArrId.push({ parent, children: [currentItem] });
-      lastParent = currentItem.parentId;
+    if (item.parentId !== id) {
       continue;
     }
 
-    if (parent == lastParent) {
-      parentArrArr[parentArrArr.length - 1].push(currentItem);
-      parentArrId[parentArrId.length - 1].children.push(currentItem);
-    }
+    const recursionResult = generateRecursive(data, item.id);
+    setChildren(recursionResult, item);
+
+    result.push(item);
   }
-  parentArrId.forEach((item) => {
-    for (let i = 0; i < parentArrArr.length; i++) {
-      const currentParentArr = parentArrArr[i];
-      for (let j = 0; j < currentParentArr.length; j++) {
-        const findItem = currentParentArr[j];
 
-        if (item.parent === findItem.id) {
-          findItem.children = item.children;
-          break;
-        }
-      }
+  return result;
+};
+export const structuredTable = (data: TableArr) => {
+  const result = [];
+
+  for (let i = 0; i < data.length; i++) {
+    const item = data[i];
+
+    if (item.parentId) {
+      continue;
     }
-  });
 
-  return parentArrArr[parentArrArr.length - 1];
+    const recursionResult = generateRecursive(data, item.id);
+    setChildren(recursionResult, item);
+
+    result.push(item);
+  }
+
+  return result;
 };

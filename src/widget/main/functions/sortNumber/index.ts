@@ -8,7 +8,7 @@ const filterNumber: SortFunction = (data, sortOptions) => {
   return data.filter((item) => {
     const result = (getOnlyNumber(item[key]) + "")
       .toLowerCase()
-      .includes(filter.toLowerCase());
+      .includes((getOnlyNumber(filter) + "").toLowerCase());
 
     if (!result && item.children) {
       const deepResult = filterNumber(item.children, sortOptions);

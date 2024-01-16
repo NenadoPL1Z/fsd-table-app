@@ -5,7 +5,7 @@ const filterSting: SortFunction = (data, sortOptions) => {
   const key = id as never;
 
   return data.filter((item) => {
-    const result = (item[key] as string)
+    const result = (item[key] + "")
       .toLowerCase()
       .includes(filter.toLowerCase());
 

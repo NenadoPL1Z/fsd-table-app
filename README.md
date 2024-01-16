@@ -1,10 +1,8 @@
-# FSD + REACT + TS + VITE + VITEST + SCSS
+# Live Demo
+https://fsd-table-app.vercel.app/# FSD + REACT + TS + VITE + VITEST + SCSS
 # Написал 1 тест :) 
 # Пагинацию не сделал. Сделать не сложно, если бы начал делал, то использовал (react-paginate);
 # Фильтрация и сортирвока по одной колонке, так-же можно улучшить и сделать фильтрацию с учетом нескольких колонок.
-
-# Live Demo
-https://fsd-table-app.vercel.app/
 
 # React + TypeScript + Vite
 

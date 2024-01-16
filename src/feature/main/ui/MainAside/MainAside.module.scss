@@ -1,17 +1,22 @@
 .button {
-  width: 20px;
+  width: 25px;
+  height: 25px;
+  padding: 0;
 
-  background-color: var(--primary-color);
-  color: var(--white-color);
+  font-size: 13px;
 
-  border: 0;
+  background-color: var(--white-color);
+  border-radius: 4px;
+
   cursor: pointer;
+}
 
-  transition: .2s all linear;
+.open {
+  color: var(--secondary-color);
+  border: 1px solid var(--succes);
+}
 
-  @media (hover: hover) {
-    &:hover {
-      background-color: var(--secondary-color);
-    }
-  }
+.close {
+  color: var(--secondary-color);
+  border: 1px solid var(--error);
 }

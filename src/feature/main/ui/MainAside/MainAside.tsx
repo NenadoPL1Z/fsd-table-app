@@ -10,11 +10,11 @@ const Component = ({ isOpen, handleToggle }: MainAsideProps) => {
   const buttonText = useMemo(() => (isOpen ? "-" : "+"), [isOpen]);
 
   return (
-    <div>
-      <button className={styles.button} onClick={handleToggle}>
-        {buttonText}
-      </button>
-    </div>
+    <button
+      className={`${styles.button} ${!isOpen && styles.open} ${isOpen && styles.close}`}
+      onClick={handleToggle}>
+      {buttonText}
+    </button>
   );
 };
 

@@ -13,13 +13,13 @@
 }
 
 .line {
-  width: 100%;
-  height: 100%;
+  width: 5px;
+  height: calc(100% - 2px);
 
-  background-color: var(--secondary-color);
+  background-color: var(--black-color);
 
   position: absolute;
   left: 0;
-  top: 0;
+  top: 2px;
   z-index: var(--z-index-hide);
 }

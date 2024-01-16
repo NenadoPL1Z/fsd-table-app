@@ -16,6 +16,7 @@ export const useMainRow = (props: MainRowProps) => {
   };
 
   const dynamicLine: CSSProperties = {
+    left: `${nested * 10}px`,
     opacity: `0.${3 + nested * 2}`,
   };
 

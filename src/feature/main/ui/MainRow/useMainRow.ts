@@ -11,7 +11,7 @@ export const useMainRow = (props: MainRowProps) => {
     setIsOpen((prevState) => !prevState);
   };
 
-  const dynamicButton: CSSProperties = {
+  const dynamicPadding: CSSProperties = {
     paddingLeft: `${nested * 8 || 3}px`,
   };
 
@@ -25,7 +25,8 @@ export const useMainRow = (props: MainRowProps) => {
 
     isOpen,
     isDisplayChildren,
-    dynamicButton,
+
+    dynamicPadding,
     dynamicLine,
 
     handleToggle,

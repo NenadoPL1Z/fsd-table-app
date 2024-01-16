@@ -1,3 +1,11 @@
+# FSD + REACT + TS + VITE + VITEST + SCSS
+# Написал 1 тест :) 
+# Пагинацию не сделал. Сделать не сложно, если бы начал делал, то использовал (react-paginate); (Вечером добавлю)
+# Филтрация и сортирвока по одной колонке, так-же можно улучшить и сделать филтрацию с учетом нескольких колонок.
+
+# Live Demo
+https://fsd-table-app.vercel.app/
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

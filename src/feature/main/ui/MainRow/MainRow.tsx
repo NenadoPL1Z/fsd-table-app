@@ -10,6 +10,7 @@ const Component = (props: MainRowProps) => {
     children,
 
     isOpen,
+    isChildren,
     isDisplayChildren,
 
     dynamicPadding,
@@ -22,7 +23,7 @@ const Component = (props: MainRowProps) => {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div style={dynamicPadding} className={styles.aside}>
-          {children && (
+          {isChildren && (
             <>
               <MainAside isOpen={isOpen} handleToggle={handleToggle} />
             </>

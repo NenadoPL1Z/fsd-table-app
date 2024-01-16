@@ -3,9 +3,10 @@ import { MainRowProps } from "@/feature/main/ui/MainRow/types";
 
 export const useMainRow = (props: MainRowProps) => {
   const { children, nested } = props;
+  const isChildren = !!children?.length;
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const isDisplayChildren = children && isOpen;
+  const isDisplayChildren = isChildren && isOpen;
 
   const handleToggle = () => {
     setIsOpen((prevState) => !prevState);
@@ -24,6 +25,7 @@ export const useMainRow = (props: MainRowProps) => {
     children,
 
     isOpen,
+    isChildren,
     isDisplayChildren,
 
     dynamicPadding,

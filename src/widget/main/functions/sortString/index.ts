@@ -1,10 +1,20 @@
 import { SortFunction } from "../../types";
 
-const filterSting: SortFunction = (data, { id, filter }) => {
+const filterSting: SortFunction = (data, sortOptions) => {
+  const { id, filter } = sortOptions;
   const key = id as never;
 
   return data.filter((item) => {
-    return (item[key] as string).toLowerCase().includes(filter.toLowerCase());
+    const result = (item[key] as string)
+      .toLowerCase()
+      .includes(filter.toLowerCase());
+
+    if (!result && item.children) {
+      const deepResult = filterSting(item.children, sortOptions);
+      return deepResult.length;
+    }
+
+    return result;
   });
 };
 

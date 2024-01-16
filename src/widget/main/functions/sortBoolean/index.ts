@@ -1,10 +1,20 @@
 import { SortFunction } from "../../types";
 
-const filterBoolean: SortFunction = (data, { id, filter }) => {
+const filterBoolean: SortFunction = (data, sortOptions) => {
+  const { id, filter } = sortOptions;
   const key = id as never;
 
   return data.filter((item) => {
-    return (item[key] + "").toLowerCase().includes(filter.toLowerCase());
+    const result = (item[key] + "")
+      .toLowerCase()
+      .includes(filter.toLowerCase());
+
+    if (!result && item.children) {
+      const deepResult = filterBoolean(item.children, sortOptions);
+      return deepResult.length;
+    }
+
+    return result;
   });
 };
 

@@ -1,11 +1,19 @@
 import { checkIsNaN, getOnlyNumber } from "@/shared/functions";
 import { SortFunction } from "../../types";
 
-const filterNumber: SortFunction = (data, { id, filter }) => {
+const filterNumber: SortFunction = (data, sortOptions) => {
+  const { id, filter } = sortOptions;
   const key = id as never;
 
   return data.filter((item) => {
-    return getOnlyNumber(item[key]) >= checkIsNaN(filter);
+    const result = getOnlyNumber(item[key]) >= checkIsNaN(filter);
+
+    if (!result && item.children) {
+      const deepResult = filterNumber(item.children, sortOptions);
+      return deepResult.length;
+    }
+
+    return result;
   });
 };
 

@@ -4,7 +4,7 @@ module.exports = {
     browser: true,
     es2020: true
   },
-      extends: [
+  extends: [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
